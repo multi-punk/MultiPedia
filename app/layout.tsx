@@ -1,6 +1,6 @@
 /* eslint-env node */
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
-import { Callout, Head } from 'nextra/components'
+import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 
@@ -11,7 +11,6 @@ export const metadata = {
   },
   description: 'Nextra: the Next.js site builder',
   applicationName: 'MultiPedia',
-  
   generator: 'Next.js',
   appleWebApp: {
     title: 'MultiPedia'
@@ -23,6 +22,9 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children }) {
+  const feedbacks = {
+    content: "Предложить изменение"
+  }
   const navbar = (
     <Navbar
       logoLink="../guides"
@@ -46,8 +48,9 @@ export default async function RootLayout({ children }) {
             title: "На этой странице"
           }}
           footer={<Footer>MIT {new Date().getFullYear()} © MultiPedia.</Footer>}
-          editLink="Edit this page on GitHub"
+          editLink="Редактировать на GitHub"
           docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/docs"
+          feedback={feedbacks}
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
         >
