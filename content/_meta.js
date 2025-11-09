@@ -12,7 +12,9 @@ export default {
       },
   rules: "Правила",
   
-  guides: {title: 'Гайды'},
+  guides: {
+    title: 'Гайды'
+  },
   cooking: 'Да будет пир',
   dungens_and_creepers: 'Подземелье и Криперы',
   "###": {

@@ -49,7 +49,7 @@ export default async function RootLayout({ children }) {
           }}
           footer={<Footer>MIT {new Date().getFullYear()} © MultiPedia.</Footer>}
           editLink="Редактировать на GitHub"
-          docsRepositoryBase="https://github.com/shuding/nextra/blob/main/examples/docs"
+          docsRepositoryBase="https://github.com/multi-punk/MultiPedia/tree/main/"
           feedback={feedbacks}
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
