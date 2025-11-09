@@ -11,6 +11,7 @@ export const metadata = {
   },
   description: 'Nextra: the Next.js site builder',
   applicationName: 'MultiPedia',
+  
   generator: 'Next.js',
   appleWebApp: {
     title: 'MultiPedia'
@@ -24,6 +25,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const navbar = (
     <Navbar
+      logoLink="../guides"
       logo={
         <div>
           <b>MultiPedia</b>{' '}
