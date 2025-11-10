@@ -12,6 +12,9 @@ export default {
       },
   rules: "Правила",
   
+  begginer_course: {
+    title: 'Курс для новичков'
+  },
   guides: {
     title: 'Гайды'
   },
@@ -20,4 +23,5 @@ export default {
   "###": {
     type: "separator",
   },
+  
 };
