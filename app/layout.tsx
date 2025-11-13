@@ -7,7 +7,7 @@ import 'nextra-theme-docs/style.css'
 export const metadata = {
   metadataBase: new URL('https://nextra.site'),
   title: {
-    template: '%s - Nextra'
+    template: '%s - Multi Punk'
   },
   description: 'Nextra: the Next.js site builder',
   applicationName: 'MultiPedia',
