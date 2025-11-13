@@ -1,6 +1,6 @@
 export default {
   start: '👋 Добро пожаловать!',
-  lesson2: '📋 Первый вход и планшет',
-  lesson3: '🔍 Координаты и территории',
+  getting_startted: '📋 Первый вход и планшет',
+  coords_and_lands: '🔍 Координаты и территории',
   lesson4: '📱 ',
 }
