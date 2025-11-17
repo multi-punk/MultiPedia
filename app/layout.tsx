@@ -3,6 +3,8 @@ import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
+import { CustomSearch } from './components/custom-search'
+
 
 export const metadata = {
   metadataBase: new URL('https://nextra.site'),
@@ -25,6 +27,12 @@ export default async function RootLayout({ children }) {
   const feedbacks = {
     content: "Предложить изменение"
   }
+  const searchs = {
+      placeholde: "Поиск по сайту…",
+      emptyResult: "Ничего не найдено",
+      errorText: "Ошибка загрузки индекса",
+      loading: "Загрузка…"
+  }
   const navbar = (
     <Navbar
       logoLink="../guides"
@@ -43,6 +51,7 @@ export default async function RootLayout({ children }) {
       <body>
         <Layout
           navbar={navbar}
+          search={<CustomSearch />} 
           copyPageButton={false}
           toc={{
             title: "На этой странице"
