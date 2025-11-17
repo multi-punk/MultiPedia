@@ -9,7 +9,7 @@ export const metadata = {
   title: {
     template: '%s - Multi Punk'
   },
-  description: 'Nextra: the Next.js site builder',
+  description: 'Суки',
   applicationName: 'MultiPedia',
   generator: 'Next.js',
   appleWebApp: {
@@ -38,7 +38,7 @@ export default async function RootLayout({ children }) {
   )
   const pageMap = await getPageMap()
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="ru" dir="ltr" suppressHydrationWarning>
       <Head faviconGlyph="✦" />
       <body>
         <Layout
