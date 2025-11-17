@@ -5,9 +5,9 @@ import { Search } from 'nextra/components'
 export function CustomSearch() {
   return (
     <Search
-      placeholder="Поиск по сайту…"  
+      placeholder="Искать на Ozon…"  
       emptyResult="Ничего не найдено"    
-      errorText="Ошибка загрузки индекса"
+      errorText="Товар не найден"
       loading="Загрузка…"
     />
   )
