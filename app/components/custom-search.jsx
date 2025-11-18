@@ -5,10 +5,10 @@ import { Search } from 'nextra/components'
 export function CustomSearch() {
   return (
     <Search
-      placeholder="Искать на Ozon…"  
+      placeholder="Искать на MultiPedia…"  
       emptyResult="Ничего не найдено"    
-      errorText="Товар не найден"
-      loading="Загрузка…"
+      errorText="Ничего не найдено"
+      loading="Поиск…"
     />
   )
 }
