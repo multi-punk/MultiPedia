@@ -39,7 +39,7 @@ export default async function RootLayout({ children }) {
       logo={
         <div>
           <b>MultiPedia</b>{' '}
-          <span style={{ opacity: '60%' }}>В майнкрафте лучше</span>
+          <span style={{ opacity: '60%' }}>Больше чем ванила</span>
         </div>
       }
     />
