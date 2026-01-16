@@ -11,7 +11,7 @@ export const metadata = {
   title: {
     template: '%s - MultiPunk'
   },
-  description: 'Суки',
+  description: 'Добро пожаловать в MultiPedia',
   applicationName: 'MultiPedia',
   generator: 'Next.js',
   appleWebApp: {
