@@ -3,12 +3,12 @@ export default {
   index: {
     title: "Главная"
   },
-  rules: {
-    title: "Правила"
-  },
   "---": {
     type: "separator",
     title: "MP SMP"
+  },
+  rules: {
+    title: "Правила"
   },
   begginer_course: {
     title: 'Курс для новичков'
