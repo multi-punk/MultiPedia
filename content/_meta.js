@@ -19,4 +19,7 @@ export default {
       collapsed: false
     }
   },
+  items_and_blocks: {
+    title: '🧱 Предметы и Блоки'
+  },
 };

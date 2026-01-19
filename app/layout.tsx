@@ -4,6 +4,7 @@ import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { CustomSearch } from './components/custom-search'
+import { SidebarIcon } from './components/sidebar-icon'
 
 
 export const metadata = {
@@ -37,8 +38,13 @@ export default async function RootLayout({ children }) {
     <Navbar
       logoLink="../guides"
       logo={
-        <div>
-          <b>MultiPedia</b>{' '}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <img 
+            src="/assets/mpedia logo.png" 
+            alt="MultiPedia Logo" 
+            style={{ height: '24px', width: 'auto' }}
+          />
+          <b>Multi-педия</b>{' '}
           <span style={{ opacity: '60%' }}>Больше чем ванила</span>
         </div>
       }
@@ -63,6 +69,7 @@ export default async function RootLayout({ children }) {
           sidebar={{ defaultMenuCollapseLevel: 1 }}
           pageMap={pageMap}
         >
+          <SidebarIcon />
           {children}
         </Layout>
       </body>

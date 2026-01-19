@@ -24,3 +24,59 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Кастомная иконка для Самоцвета в навигации (sidebar) */
+/* Улучшенное выравнивание и качество рендеринга */
+a[href*="multigem"]::before,
+a[href*="/items_and_blocks/multigem"]::before,
+a[href*="/items and blocks/multigem"]::before,
+a[href="/items_and_blocks/multigem"]::before,
+a[href="/items and blocks/multigem"]::before,
+a[href$="/items_and_blocks/multigem"]::before,
+a[href$="/items and blocks/multigem"]::before,
+li a[href*="multigem"]::before,
+li.active a[href*="multigem"]::before,
+ul li a[href*="multigem"]::before,
+[class*="sidebar"] a[href*="multigem"]::before,
+[class*="nav"] a[href*="multigem"]::before,
+nav a[href*="multigem"]::before,
+aside a[href*="multigem"]::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  background-image: url('/assets/items_and_blocks/multigem.png') !important;
+  background-size: 24px 24px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  image-rendering: pixelated !important;
+  flex-shrink: 0 !important;
+  margin-right: 8px !important;
+  vertical-align: baseline !important;
+  transform: translateY(2px) !important;
+  order: -1 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Дополнительно для flex-контейнеров - улучшенное выравнивание */
+a[href*="multigem"] {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  line-height: 1.5 !important;
+}
+
+/* Специальные стили для иконки, добавленной через JavaScript */
+.custom-gemstone-icon {
+  image-rendering: -webkit-optimize-contrast !important;
+  image-rendering: crisp-edges !important;
+  image-rendering: pixelated !important;
+  object-fit: contain !important;
+  transform: translateY(2px) !important;
+}
