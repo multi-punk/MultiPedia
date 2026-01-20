@@ -10,6 +10,9 @@ export default {
   rules: {
     title: "Правила"
   },
+  faq: {
+    title: "FAQ"
+  },
   begginer_course: {
     title: 'Курс для новичков'
   },
@@ -21,5 +24,12 @@ export default {
   },
   items_and_blocks: {
     title: '🧱 Предметы и Блоки'
+  },
+  "---2": {
+    type: "separator",
+    title: "Multi PUNK Мини игры"
+  },
+  minigames_rules: {
+    title: "Правила"
   },
 };
