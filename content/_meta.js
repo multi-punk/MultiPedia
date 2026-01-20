@@ -17,10 +17,7 @@ export default {
     title: 'Курс для новичков'
   },
   guides: {
-    title: 'Гайды',
-    theme: {
-      collapsed: false
-    }
+    title: 'Гайды'
   },
   items_and_blocks: {
     title: '🧱 Предметы и Блоки'
