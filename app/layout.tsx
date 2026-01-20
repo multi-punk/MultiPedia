@@ -40,9 +40,9 @@ export default async function RootLayout({ children }) {
       logo={
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <img 
-            src="/assets/mpedia logo.png" 
+            src="/assets/mpedia logo.svg" 
             alt="MultiPedia Logo" 
-            style={{ height: '24px', width: 'auto' }}
+            style={{ height: '34px', width: 'auto' }}
           />
           <b>Multi-педия</b>{' '}
           <span style={{ opacity: '60%' }}>Больше чем ванила</span>
