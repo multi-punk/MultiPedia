@@ -27,17 +27,6 @@ export function SidebarIcon() {
             width: 24px;
             height: 24px;
             min-width: 24px;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
-            image-rendering: pixelated;
-            margin-right: 8px;
-            flex-shrink: 0;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            vertical-align: baseline;
-            transform: translateY(2px);
-            object-fit: contain;
           `
           
           // Вставляем иконку перед текстом

@@ -20,7 +20,7 @@ export default {
     title: 'Гайды'
   },
   items_and_blocks: {
-    title: '🧱 Предметы и Блоки'
+    title: 'Предметы и Блоки'
   },
   "---2": {
     type: "separator",
