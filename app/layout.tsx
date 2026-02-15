@@ -52,13 +52,15 @@ export default async function RootLayout({ children }) {
   )
   const pageMap = await getPageMap()
   return (
-    <html lang="ru" dir="ltr" suppressHydrationWarning>
+    <html lang="ru" dir="ltr" className="dark" suppressHydrationWarning>
       <Head faviconGlyph="✦" />
       <body>
         <Layout
           navbar={navbar}
           search={<CustomSearch />} 
           copyPageButton={false}
+          darkMode={false}
+          nextThemes={{ forcedTheme: 'dark' }}
           toc={{
             title: "На этой странице"
           }}
