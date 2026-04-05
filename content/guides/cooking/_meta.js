@@ -2,7 +2,6 @@ export default {
   getting_started: '🍖 Первые шаги',
   ingredients: '🔪 Ингредиенты и подготовка',
   process: '🔥 Процесс готовки',
-  recipes: '📖 Рецепты',
   serving: '🍽️ Сервировка и подача',
-  water_and_more: '⏳ Течение времени',
+  special_dishes: '🥧 Крафт и выпечка',
 }
