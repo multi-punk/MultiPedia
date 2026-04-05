@@ -1,9 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  changelog: {
+  blog: {
     title: "Changelog",
-    type: "page",
-    "href": "changelog"
+    type: "page"
   },
   index: {
     title: "Главная"
