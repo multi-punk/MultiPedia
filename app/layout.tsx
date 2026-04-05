@@ -34,6 +34,7 @@ export default async function RootLayout({ children }) {
       errorText: "Ошибка загрузки индекса",
       loading: "Загрузка…"
   }
+  
   const navbar = (
     <Navbar
       logoLink="../guides"
@@ -48,6 +49,7 @@ export default async function RootLayout({ children }) {
           <span style={{ opacity: '60%' }}>Больше чем ванила</span>
         </div>
       }
+      chatLink="https://discord.gg/maGFJbf32V"
     />
   )
   const pageMap = await getPageMap()

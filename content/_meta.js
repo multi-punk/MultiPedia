@@ -1,5 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
+  changelog: {
+    title: "Changelog",
+    type: "page",
+    "href": "changelog"
+  },
   index: {
     title: "Главная"
   },
