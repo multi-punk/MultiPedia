@@ -1,11 +1,14 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  blog: {
-    title: "Changelog",
-    type: "page"
-  },
   index: {
     title: "Главная"
+  },
+  changelog: {
+    title: "Список изменений"
+  },
+  blog: {
+    title: "Блог",
+    type: "page"
   },
   "---": {
     type: "separator",
