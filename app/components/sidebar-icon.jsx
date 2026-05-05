@@ -10,17 +10,21 @@ export function SidebarIcon() {
       const links = document.querySelectorAll('a[href*="multigem"]')
       
       links.forEach(link => {
-        // Проверяем, нет ли уже иконки
+        // Уже добавили через этот же скрипт
         if (link.querySelector('.custom-gemstone-icon')) {
           return
         }
-        
+        // Своя текстура уже внутри ссылки (напр. карточка Cards на странице) — не дублируем
+        if (link.querySelector('img[src*="items_and_blocks"]')) {
+          return
+        }
+
         // Проверяем, что это ссылка на Самоцвет (содержит текст "Самоцвет")
         const linkText = link.textContent?.trim()
         if (linkText === 'Самоцвет' || linkText?.includes('Самоцвет')) {
           // Создаем элемент иконки
           const icon = document.createElement('img')
-          icon.src = '/assets/items_and_blocks/multigem.png'
+          icon.src = '/assets/items_and_blocks/multi_gem.png'
           icon.alt = 'Самоцвет'
           icon.className = 'custom-gemstone-icon'
           icon.style.cssText = `

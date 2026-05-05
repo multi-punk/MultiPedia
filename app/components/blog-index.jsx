@@ -40,7 +40,7 @@ export async function BlogIndex() {
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 
   if (posts.length === 0) {
-    return <p style={{ opacity: 0.6 }}>Постов пока нет.</p>
+    return <p style={{ opacity: 0.6 }}>Новостей пока нет.</p>
   }
 
   return (

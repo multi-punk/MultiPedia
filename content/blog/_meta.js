@@ -1,13 +1,6 @@
+/* Все записи новостей скрыты в сайдбаре — список постов только на странице /blog */
 export default {
-  index: {
-    title: 'Changelog'
+  '*': {
+    display: 'hidden',
   },
-  welcome: {
-    title: 'Добро пожаловать в Changelog MultiPedia',
-    display: 'hidden'
-  },
-  'my-post': {
-    title: 'Заголовок поста',
-    display: 'hidden'
-  }
 }

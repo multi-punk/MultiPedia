@@ -3,12 +3,11 @@ export default {
   index: {
     title: "Главная"
   },
-  changelog: {
-    title: "Список изменений"
-  },
   blog: {
-    title: "Блог",
-    type: "page"
+    title: "Новости",
+    theme: {
+      collapsed: false,
+    },
   },
   "---": {
     type: "separator",
