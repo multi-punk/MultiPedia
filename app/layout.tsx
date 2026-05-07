@@ -37,7 +37,7 @@ export default async function RootLayout({ children }) {
   
   const navbar = (
     <Navbar
-      logoLink="../guides"
+      logoLink="/"
       logo={
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <img 

@@ -1,0 +1,38 @@
+.wrap {
+  margin-block: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  border-left-width: 4px;
+  border-left-color: rgb(59, 130, 246);
+  background: rgba(30, 41, 59, 0.55);
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: inherit;
+}
+
+.wrap :global(a) {
+  color: rgb(96, 165, 250);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.wrap :global(a:hover) {
+  color: rgb(147, 197, 253);
+}
+
+.wrap :global(strong) {
+  font-weight: 600;
+}
+
+.wrap :global(p) {
+  margin: 0.5rem 0;
+}
+
+.wrap :global(p:first-child) {
+  margin-top: 0;
+}
+
+.wrap :global(p:last-child) {
+  margin-bottom: 0;
+}
