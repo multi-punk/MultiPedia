@@ -4,63 +4,78 @@ import { useEffect } from 'react'
 
 export function SidebarIcon() {
   useEffect(() => {
-    // Функция для добавления иконки к элементу "Самоцвет"
-    const addIconToGemstone = () => {
-      // Ищем все ссылки, содержащие "multigem" в href
-      const links = document.querySelectorAll('a[href*="multigem"]')
-      
-      links.forEach(link => {
-        // Уже добавили через этот же скрипт
-        if (link.querySelector('.custom-gemstone-icon')) {
+    const injectSidebarIcon = ({
+      hrefIncludes,
+      textMatch,
+      src,
+      alt,
+      skip,
+    }) => {
+      const links = document.querySelectorAll(`a[href*="${hrefIncludes}"]`)
+
+      links.forEach((link) => {
+        if (link.querySelector('.custom-sidebar-icon')) {
           return
         }
-        // Своя текстура уже внутри ссылки (напр. карточка Cards на странице) — не дублируем
-        if (link.querySelector('img[src*="items_and_blocks"]')) {
+        if (skip?.(link)) {
           return
         }
 
-        // Проверяем, что это ссылка на Самоцвет (содержит текст "Самоцвет")
         const linkText = link.textContent?.trim()
-        if (linkText === 'Самоцвет' || linkText?.includes('Самоцвет')) {
-          // Создаем элемент иконки
-          const icon = document.createElement('img')
-          icon.src = '/assets/items_and_blocks/multi_gem.png'
-          icon.alt = 'Самоцвет'
-          icon.className = 'custom-gemstone-icon'
-          icon.style.cssText = `
+        if (!textMatch(linkText)) {
+          return
+        }
+
+        const icon = document.createElement('img')
+        icon.src = src
+        icon.alt = alt
+        icon.className = 'custom-sidebar-icon'
+        icon.style.cssText = `
             width: 24px;
             height: 24px;
             min-width: 24px;
           `
-          
-          // Вставляем иконку перед текстом
-          if (link.firstChild) {
-            link.insertBefore(icon, link.firstChild)
-          } else {
-            link.appendChild(icon)
-          }
+
+        if (link.firstChild) {
+          link.insertBefore(icon, link.firstChild)
+        } else {
+          link.appendChild(icon)
         }
       })
     }
-    
-    // Вызываем сразу
-    addIconToGemstone()
-    
-    // Также вызываем после небольшой задержки (на случай, если DOM еще не готов)
-    const timeout = setTimeout(addIconToGemstone, 100)
-    
-    // Наблюдаем за изменениями DOM (на случай динамической загрузки)
-    const observer = new MutationObserver(addIconToGemstone)
+
+    const run = () => {
+      injectSidebarIcon({
+        hrefIncludes: 'multigem',
+        textMatch: (t) => t === 'Самоцвет' || t?.includes('Самоцвет'),
+        src: '/assets/items_and_blocks/multi_gem.png',
+        alt: 'Самоцвет',
+        skip: (link) =>
+          !!link.querySelector('img[src*="items_and_blocks"]'),
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'dungens_and_creepers/basics',
+        textMatch: (t) => t === 'Основы' || t?.includes('Основы'),
+        src: '/assets/dungeons_and_creepers/creeper_vault_key.png',
+        alt: 'Зелёный ключ',
+      })
+    }
+
+    run()
+    const timeout = setTimeout(run, 100)
+
+    const observer = new MutationObserver(run)
     observer.observe(document.body, {
       childList: true,
-      subtree: true
+      subtree: true,
     })
-    
+
     return () => {
       clearTimeout(timeout)
       observer.disconnect()
     }
   }, [])
-  
+
   return null
 }

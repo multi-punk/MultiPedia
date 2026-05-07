@@ -18,8 +18,27 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Специальные стили для иконки самоцвета в sidebar */
-.custom-gemstone-icon {
+/* Inline-иконки как «эмодзи» (пиксель-арт, фиксированный размер) */
+img.emoji {
+  width: 24px;
+  height: 24px;
+  box-sizing: border-box;
+  object-fit: contain;
+  vertical-align: -0.2em;
+  image-rendering: pixelated;
+  flex-shrink: 0;
+}
+
+.emoji-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/* Иконки предметов в пункте сайдбара (как у «Самоцвета», зелёный ключ и т.п.) */
+.custom-sidebar-icon {
   image-rendering: pixelated !important;
   display: inline-block !important;
   vertical-align: -6px !important;

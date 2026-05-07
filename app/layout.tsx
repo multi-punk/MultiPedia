@@ -3,6 +3,7 @@ import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
+import './globals.css'
 import { CustomSearch } from './components/custom-search'
 import { SidebarIcon } from './components/sidebar-icon'
 
