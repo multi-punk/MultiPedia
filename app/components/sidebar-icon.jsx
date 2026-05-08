@@ -46,6 +46,42 @@ export function SidebarIcon() {
 
     const run = () => {
       injectSidebarIcon({
+        hrefIncludes: 'cooking/getting_started',
+        textMatch: (t) => t === 'Первые шаги' || t?.includes('Первые шаги'),
+        src: '/assets/guides/cooking/stackburger.png',
+        alt: 'Первые шаги',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'cooking/ingredients',
+        textMatch: (t) =>
+          t === 'Ингредиенты и подготовка' || t?.includes('Ингредиенты и подготовка'),
+        src: '/assets/guides/cooking/flint_knife_alt_item.png',
+        alt: 'Ингредиенты и подготовка',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'cooking/process',
+        textMatch: (t) => t === 'Процесс готовки' || t?.includes('Процесс готовки'),
+        src: '/assets/guides/cooking/recipe_fragment.png',
+        alt: 'Процесс готовки',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'cooking/serving',
+        textMatch: (t) => t === 'Сервировка и подача' || t?.includes('Сервировка и подача'),
+        src: '/assets/guides/cooking/wooden_plate_item.png',
+        alt: 'Сервировка и подача',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'cooking/special_dishes',
+        textMatch: (t) => t === 'Крафт и выпечка' || t?.includes('Крафт и выпечка'),
+        src: '/assets/guides/cooking/berry_pie.png',
+        alt: 'Крафт и выпечка',
+      })
+
+      injectSidebarIcon({
         hrefIncludes: 'multigem',
         textMatch: (t) => t === 'Самоцвет' || t?.includes('Самоцвет'),
         src: '/assets/items_and_blocks/multi_gem.png',
