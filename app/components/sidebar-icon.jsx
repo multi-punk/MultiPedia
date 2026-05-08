@@ -46,6 +46,13 @@ export function SidebarIcon() {
 
     const run = () => {
       injectSidebarIcon({
+        hrefIncludes: 'guides/territory',
+        textMatch: (t) => t === 'Как занять территорию?' || t?.includes('Как занять территорию?'),
+        src: '/assets/guides/territory/territory_staff.png',
+        alt: 'Посох регистрации территории',
+      })
+
+      injectSidebarIcon({
         hrefIncludes: 'cooking/getting_started',
         textMatch: (t) => t === 'Первые шаги' || t?.includes('Первые шаги'),
         src: '/assets/guides/cooking/stackburger.png',
