@@ -60,6 +60,34 @@ export function SidebarIcon() {
         src: '/assets/dungeons_and_creepers/creeper_vault_key.png',
         alt: 'Зелёный ключ',
       })
+
+      injectSidebarIcon({
+        hrefIncludes: 'dungens_and_creepers/boss-totemnik',
+        textMatch: (t) => t === 'Босс тотемник' || t?.includes('Босс тотемник'),
+        src: '/assets/dungeons_and_creepers/green_boss_core.png',
+        alt: 'Ядро босса тотемника',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'dungens_and_creepers/boss-fleytist',
+        textMatch: (t) => t === 'Босс флейтист' || t?.includes('Босс флейтист'),
+        src: '/assets/dungeons_and_creepers/purple_boss_core.png',
+        alt: 'Ядро босса флейтиста',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'dungens_and_creepers/boss-sklep',
+        textMatch: (t) => t === 'Босс склеп' || t?.includes('Босс склеп'),
+        src: '/assets/dungeons_and_creepers/yellow_boss_core.png',
+        alt: 'Ядро босса склепа',
+      })
+
+      injectSidebarIcon({
+        hrefIncludes: 'dungens_and_creepers/pipe-logistics',
+        textMatch: (t) => t === 'Продвинутая логистика' || t?.includes('Продвинутая логистика'),
+        src: '/assets/dungeons_and_creepers/pipe_ui_graphic.png',
+        alt: 'Продвинутая логистика',
+      })
     }
 
     run()

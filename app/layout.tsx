@@ -47,7 +47,7 @@ export default async function RootLayout({ children }) {
             style={{ height: '34px', width: 'auto' }}
           />
           <b>Multi-педия</b>{' '}
-          <span style={{ opacity: '60%' }}>Больше чем ванила</span>
+          <span style={{ opacity: '60%' }}>Чуть больше чем ванила</span>
         </div>
       }
       chatLink="https://discord.gg/maGFJbf32V"
