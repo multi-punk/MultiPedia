@@ -1,10 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   index: {
-    title: "Главная"
+    title: "Главная",
+    type: "page"
   },
   blog: {
     title: "Новости",
+    type: "page",
     theme: {
       collapsed: false,
     },
@@ -14,10 +16,12 @@ export default {
     title: "MP SMP"
   },
   rules: {
-    title: "Правила"
+    title: "Правила",
+    type: "page"
   },
   faq: {
-    title: "FAQ"
+    title: "FAQ",
+    type: "page"
   },
   begginer_course: {
     title: 'Курс для новичков'
