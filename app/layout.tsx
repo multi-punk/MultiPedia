@@ -41,9 +41,9 @@ export default async function RootLayout({ children }) {
       logoLink="/"
       logo={
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <img 
-            src="/assets/mpedia logo.svg" 
-            alt="MultiPedia Logo" 
+          <img
+            src="/assets/mpedia logo.svg"
+            alt="MultiPedia Logo"
             style={{ height: '34px', width: 'auto' }}
           />
           <b>Multi-педия</b>{' '}
@@ -51,7 +51,11 @@ export default async function RootLayout({ children }) {
         </div>
       }
       chatLink="https://discord.gg/maGFJbf32V"
-    />
+    >
+      <a href="https://multi-punk.net" className="back-to-site-btn">
+        ← На сайт
+      </a>
+    </Navbar>
   )
   const pageMap = await getPageMap()
   return (
