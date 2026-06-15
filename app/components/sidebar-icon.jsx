@@ -11,7 +11,7 @@ export function SidebarIcon() {
       alt,
       skip,
     }) => {
-      const links = document.querySelectorAll(`a[href*="${hrefIncludes}"]`)
+      const links = document.querySelectorAll(`.nextra-sidebar a[href*="${hrefIncludes}"]`)
 
       links.forEach((link) => {
         if (link.querySelector('.custom-sidebar-icon')) {
@@ -45,6 +45,12 @@ export function SidebarIcon() {
     }
 
     const run = () => {
+      document.querySelectorAll('.custom-sidebar-icon').forEach((icon) => {
+        if (!icon.closest('.nextra-sidebar')) {
+          icon.remove()
+        }
+      })
+
       injectSidebarIcon({
         hrefIncludes: 'guides/territory',
         textMatch: (t) => t === 'Как занять территорию?' || t?.includes('Как занять территорию?'),

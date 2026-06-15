@@ -1,24 +1,863 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Onest:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #0a0a0c;
+  --foreground: #f2f4f6;
+  --mp-accent: #4a9eea;
+  --mp-accent-text: #8cc2f7;
+  --mp-accent-soft: color-mix(in srgb, var(--mp-accent) 18%, transparent);
+  --mp-accent-line: color-mix(in srgb, var(--mp-accent) 40%, transparent);
+  --mp-bg: #0a0a0c;
+  --mp-panel: #141519;
+  --mp-panel-2: #1a1c21;
+  --mp-panel-3: #23262c;
+  --mp-ink: #f2f4f6;
+  --mp-ink-dim: #b0b6bf;
+  --mp-ink-mute: #71767f;
+  --mp-border: rgba(255, 255, 255, 0.07);
+  --mp-border-2: rgba(255, 255, 255, 0.12);
+  --mp-card-radius: 16px;
+  --mp-panel-radius: 12px;
+  --mp-pill-radius: 9px;
+  --mp-small-radius: 6px;
+  --mp-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset,
+    0 18px 40px -24px rgba(0, 0, 0, 0.9);
+  --nextra-bg: 10, 10, 12;
+  --nextra-content-width: 1280px;
+  --nextra-navbar-height: 88px;
+  --nextra-primary-hue: 207deg;
+  --nextra-primary-saturation: 80%;
+  --nextra-primary-lightness: 58%;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Onest", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+  background: var(--mp-bg);
+  color-scheme: dark;
 }
 
-/* Inline-иконки как «эмодзи» (пиксель-арт, фиксированный размер) */
+body.multipedia-theme {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.026) 1px, transparent 1px) 0 0 / 22px 22px,
+    var(--mp-bg);
+  color: var(--mp-ink);
+  font-family: "Onest", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.multipedia-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(74, 158, 234, 0.08), transparent 280px),
+    radial-gradient(circle at 50% -20%, rgba(103, 214, 230, 0.12), transparent 38%);
+  mask-image: linear-gradient(180deg, #000 0%, transparent 68%);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--mp-accent) 45%, transparent);
+  color: #fff;
+}
+
+.nextra-border {
+  border-color: var(--mp-border) !important;
+}
+
+.mp-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.mp-logo-mark {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--mp-border-2);
+  border-radius: 7px;
+  background: var(--mp-panel-2);
+}
+
+.mp-logo-mark img {
+  width: 31px;
+  height: 31px;
+  object-fit: contain;
+}
+
+.mp-logo-text {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.mp-logo-name {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.mp-logo-name span {
+  color: var(--mp-accent-text);
+}
+
+.mp-logo-tagline {
+  margin-top: 2px;
+  color: var(--mp-ink-mute);
+  font-size: 10.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.mp-social-link {
+  display: inline-flex;
+  width: 38px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: var(--mp-small-radius);
+  color: var(--mp-ink-mute);
+  text-decoration: none;
+}
+
+.mp-social-link svg {
+  display: block;
+}
+
+.mp-social-link:hover {
+  border-color: var(--mp-border);
+  background: var(--mp-panel-2);
+  color: var(--mp-ink);
+}
+
+.multipedia-theme .nextra-navbar {
+  padding: 14px 22px;
+  background: transparent !important;
+}
+
+.multipedia-theme .nextra-navbar-blur {
+  display: none;
+}
+
+.multipedia-theme .nextra-navbar > nav {
+  height: 60px !important;
+  min-height: 60px;
+  padding: 0 16px 0 18px !important;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-card-radius);
+  background: var(--mp-panel);
+  box-shadow: var(--mp-shadow);
+}
+
+.multipedia-theme .nextra-navbar > nav > a:first-child {
+  padding-right: 4px;
+}
+
+.multipedia-theme .nextra-navbar > nav > div {
+  gap: 2px;
+}
+
+.multipedia-theme .nextra-navbar > nav > div > a:not(.mp-social-link),
+.multipedia-theme .nextra-navbar > nav > div > button {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 11px;
+  border-radius: var(--mp-small-radius);
+  color: var(--mp-ink-dim);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.multipedia-theme .nextra-navbar > nav > div > a:not(.mp-social-link):hover,
+.multipedia-theme .nextra-navbar > nav > div > button:hover {
+  background: var(--mp-panel-2);
+  color: var(--mp-ink);
+}
+
+.multipedia-theme .nextra-navbar > nav > div > a[aria-current] {
+  background: var(--mp-panel-3);
+  color: var(--mp-ink) !important;
+  font-weight: 700;
+}
+
+.multipedia-theme .nextra-navbar svg {
+  color: currentColor;
+}
+
+.multipedia-theme .nextra-search {
+  min-width: 230px;
+  color: var(--mp-ink-mute);
+}
+
+.multipedia-theme .nextra-search input {
+  height: 38px;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-pill-radius);
+  background: var(--mp-bg) !important;
+  color: var(--mp-ink) !important;
+  font-size: 13.5px;
+  box-shadow: none !important;
+}
+
+.multipedia-theme .nextra-search input::placeholder {
+  color: var(--mp-ink-mute) !important;
+}
+
+.multipedia-theme .nextra-search kbd,
+.multipedia-theme .nextra-search span[aria-hidden="true"] {
+  border: 1px solid var(--mp-border);
+  border-radius: 5px;
+  background: var(--mp-panel-2);
+  color: var(--mp-ink-mute);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.multipedia-theme .nextra-search-results {
+  border-color: var(--mp-border) !important;
+  border-radius: var(--mp-panel-radius) !important;
+  background: color-mix(in srgb, var(--mp-panel) 92%, transparent) !important;
+  box-shadow: var(--mp-shadow), 0 20px 60px rgba(0, 0, 0, 0.45) !important;
+}
+
+.multipedia-theme .nextra-sidebar {
+  top: calc(var(--nextra-navbar-height) + 16px) !important;
+  height: calc(100dvh - var(--nextra-navbar-height) - 32px) !important;
+  margin-right: 16px;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-card-radius);
+  background: var(--mp-panel);
+  box-shadow: var(--mp-shadow);
+}
+
+.multipedia-theme .nextra-sidebar > div:first-child {
+  padding: 12px 10px !important;
+}
+
+.multipedia-theme .nextra-sidebar ul {
+  gap: 2px;
+}
+
+.multipedia-theme .nextra-sidebar li > a,
+.multipedia-theme .nextra-sidebar li > button {
+  border-radius: var(--mp-small-radius) !important;
+  color: var(--mp-ink-dim) !important;
+  font-size: 13.5px !important;
+  font-weight: 500;
+}
+
+.multipedia-theme .nextra-sidebar li > a:hover,
+.multipedia-theme .nextra-sidebar li > button:hover {
+  background: var(--mp-panel-2) !important;
+  color: var(--mp-ink) !important;
+}
+
+.multipedia-theme .nextra-sidebar li.active > a,
+.multipedia-theme .nextra-sidebar li.active > button {
+  background: var(--mp-panel-3) !important;
+  color: #fff !important;
+  font-weight: 700;
+  box-shadow: inset 2px 0 0 var(--mp-accent);
+}
+
+.multipedia-theme .nextra-sidebar li[class*="font-semibold"],
+.multipedia-theme .nextra-sidebar li:not(.active):has(+ li) {
+  color: var(--mp-ink);
+}
+
+.multipedia-theme .nextra-sidebar img.custom-sidebar-icon {
+  image-rendering: pixelated;
+}
+
+.multipedia-theme article {
+  min-height: calc(100dvh - var(--nextra-navbar-height) - 16px) !important;
+  margin-top: 16px;
+  margin-bottom: 28px;
+  padding: 26px 36px 34px !important;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-card-radius);
+  background: var(--mp-panel);
+  box-shadow: var(--mp-shadow);
+  color: var(--mp-ink-dim) !important;
+}
+
+.multipedia-theme article main {
+  max-width: none;
+  --mp-readable-width: 760px;
+  --mp-media-width: 720px;
+}
+
+.multipedia-theme article main > p:not(:has(img)),
+.multipedia-theme article main > ul,
+.multipedia-theme article main > ol {
+  max-width: var(--mp-readable-width);
+}
+
+.multipedia-theme .nextra-breadcrumb {
+  margin: 0 0 12px !important;
+  color: var(--mp-ink-mute) !important;
+  font-size: 12.5px !important;
+}
+
+.multipedia-theme article h1 {
+  margin: 0 0 22px;
+  color: #fff !important;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.1;
+}
+
+.multipedia-theme article h2 {
+  margin: 34px 0 14px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0;
+  line-height: 1.25;
+  scroll-margin-top: 110px;
+}
+
+.multipedia-theme article h3 {
+  margin: 24px 0 10px !important;
+  color: var(--mp-ink) !important;
+  font-size: 16.5px !important;
+  font-weight: 700 !important;
+}
+
+.multipedia-theme article p,
+.multipedia-theme article li {
+  color: var(--mp-ink-dim);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.multipedia-theme article strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.multipedia-theme article a:not(.nextra-card) {
+  color: var(--mp-accent-text);
+  text-decoration-color: var(--mp-accent-line);
+  text-underline-offset: 3px;
+}
+
+.multipedia-theme article hr {
+  margin: 26px 0 !important;
+  border-color: var(--mp-border) !important;
+}
+
+.multipedia-theme article :not(pre) > code {
+  border: 1px solid var(--mp-accent-line);
+  border-radius: 5px;
+  background: var(--mp-accent-soft);
+  color: var(--mp-accent-text);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 0.85em;
+}
+
+.multipedia-theme article pre {
+  border: 1px solid var(--mp-border) !important;
+  border-radius: var(--mp-panel-radius) !important;
+  background: var(--mp-bg) !important;
+}
+
+.multipedia-theme article pre code {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+.multipedia-theme article main > p:has(img) {
+  max-width: none;
+}
+
+.multipedia-theme article main > p:has(img) > span[data-rmiz] {
+  display: block;
+  width: min(100%, var(--mp-media-width));
+  margin-inline: auto;
+}
+
+.multipedia-theme article main > p:has(img) span[data-rmiz-content],
+.multipedia-theme article main > p:has(img) img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.multipedia-theme article main > p:has(img) > img {
+  width: min(100%, var(--mp-media-width));
+  margin-inline: auto;
+}
+
+.multipedia-theme article main > p:has(img) img {
+  height: auto;
+  border-radius: var(--mp-small-radius);
+}
+
+.multipedia-theme .nextra-cards {
+  gap: 14px !important;
+}
+
+.multipedia-theme .nextra-card {
+  border: 1px solid var(--mp-border) !important;
+  border-radius: var(--mp-panel-radius) !important;
+  background: var(--mp-panel-2) !important;
+  box-shadow: none !important;
+  transition: border-color 0.12s ease, transform 0.12s ease, background 0.12s ease;
+}
+
+.multipedia-theme .nextra-card:hover {
+  border-color: var(--mp-accent) !important;
+  background: color-mix(in srgb, var(--mp-panel-2) 84%, var(--mp-accent) 16%) !important;
+  transform: translateY(-2px);
+}
+
+.multipedia-theme .nextra-card,
+.multipedia-theme .nextra-card * {
+  color: var(--mp-ink-dim) !important;
+}
+
+.multipedia-theme .nextra-card b,
+.multipedia-theme .nextra-card strong,
+.multipedia-theme .nextra-card span:first-child {
+  color: var(--mp-ink) !important;
+}
+
+.mp-home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  gap: 22px;
+  align-items: stretch;
+  margin: 8px 0 30px;
+  padding: 18px;
+  overflow: hidden;
+  border: 1px solid var(--mp-border-2);
+  border-radius: var(--mp-panel-radius);
+  background:
+    radial-gradient(circle at 18% 16%, rgba(103, 214, 230, 0.18), transparent 34%),
+    linear-gradient(145deg, var(--mp-panel-2), var(--mp-panel));
+}
+
+.mp-home-hero > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.mp-home-hero img {
+  width: 100%;
+  min-height: 220px;
+  max-height: 280px;
+  object-fit: cover;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-small-radius);
+  background: var(--mp-bg);
+}
+
+.mp-home-chip {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  margin-bottom: 13px;
+  padding: 4px 9px;
+  border: 1px solid var(--mp-accent-line);
+  border-radius: 999px;
+  background: var(--mp-accent-soft);
+  color: var(--mp-accent-text);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mp-home-lead {
+  max-width: 580px;
+  margin: 0 !important;
+  color: var(--mp-ink-dim) !important;
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+.mp-home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mp-home-button {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-small-radius);
+  background: var(--mp-panel-2);
+  color: var(--mp-ink) !important;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none !important;
+}
+
+.mp-home-button:hover {
+  border-color: var(--mp-accent-line);
+  background: var(--mp-panel-3);
+}
+
+.mp-home-button.primary {
+  border-color: transparent;
+  background: var(--mp-accent);
+  color: #07151f !important;
+}
+
+.mp-home-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 28px;
+}
+
+.mp-home-steps a,
+.mp-home-feature-grid > div,
+.mp-home-news a {
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-panel-radius);
+  background: var(--mp-panel-2);
+  text-decoration: none !important;
+}
+
+.mp-home-steps a {
+  display: flex;
+  min-height: 112px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 17px;
+}
+
+.mp-home-steps strong,
+.mp-home-feature-grid strong,
+.mp-home-news strong {
+  color: var(--mp-ink);
+  font-weight: 800;
+}
+
+.mp-home-steps small,
+.mp-home-news small {
+  color: var(--mp-ink-mute);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.mp-home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 28px;
+}
+
+.mp-home-feature-grid > div {
+  padding: 16px;
+}
+
+.mp-home-feature-grid span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.mp-home-feature-grid p {
+  margin: 7px 0 0 !important;
+  color: var(--mp-ink-mute) !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+}
+
+.mp-home-news {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 14px 0 28px;
+}
+
+.mp-home-news a {
+  display: grid;
+  gap: 10px;
+  overflow: hidden;
+  padding-bottom: 14px;
+}
+
+.mp-home-news img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: var(--mp-bg);
+}
+
+.mp-home-news strong,
+.mp-home-news small {
+  padding: 0 14px;
+}
+
+.mp-home-commands {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 9px 12px;
+  margin-top: 14px;
+  padding: 16px;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-panel-radius);
+  background: var(--mp-panel-2);
+  color: var(--mp-ink-dim);
+}
+
+.mp-home-commands code {
+  border: 1px solid var(--mp-accent-line) !important;
+  border-radius: 5px;
+  background: var(--mp-accent-soft) !important;
+  color: var(--mp-accent-text) !important;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mp-home-commands span {
+  color: var(--mp-ink-dim);
+  font-size: 14px;
+}
+
+.multipedia-theme article blockquote,
+.multipedia-theme article [class*="nextra-callout"] {
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: var(--mp-panel-radius) !important;
+}
+
+.multipedia-theme article [class*="nextra-callout"][class*="green"] {
+  border-color: rgba(34, 197, 94, 0.42) !important;
+  background: rgba(22, 101, 52, 0.22) !important;
+  color: #4ade80 !important;
+}
+
+.multipedia-theme article [class*="nextra-callout"][class*="red"] {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  background: rgba(127, 29, 29, 0.26) !important;
+  color: #f87171 !important;
+}
+
+.multipedia-theme article [class*="nextra-callout"][class*="blue"] {
+  border-color: rgba(74, 158, 234, 0.45) !important;
+  background: rgba(30, 64, 175, 0.22) !important;
+  color: var(--mp-accent-text) !important;
+}
+
+.multipedia-theme article [class*="nextra-callout"][class*="yellow"] {
+  border-color: rgba(234, 179, 8, 0.52) !important;
+  background: rgba(113, 63, 18, 0.3) !important;
+  color: #facc15 !important;
+}
+
+.multipedia-theme article [class*="nextra-callout"][class*="purple"] {
+  border-color: rgba(168, 85, 247, 0.46) !important;
+  background: rgba(88, 28, 135, 0.26) !important;
+  color: #c084fc !important;
+}
+
+.multipedia-theme table {
+  overflow: hidden;
+  border: 1px solid var(--mp-border) !important;
+  border-radius: var(--mp-panel-radius);
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13.5px;
+}
+
+.multipedia-theme th {
+  background: var(--mp-panel-2) !important;
+  color: var(--mp-ink) !important;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.multipedia-theme td {
+  color: var(--mp-ink-dim) !important;
+}
+
+.multipedia-theme tr:hover td {
+  background: var(--mp-panel-2) !important;
+}
+
+.multipedia-theme .nextra-toc {
+  width: 250px !important;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.multipedia-theme .nextra-toc > div {
+  top: calc(var(--nextra-navbar-height) + 16px) !important;
+  max-height: calc(100dvh - var(--nextra-navbar-height) - 32px) !important;
+  overflow: hidden;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-card-radius);
+  background: var(--mp-panel);
+  box-shadow: var(--mp-shadow);
+}
+
+.multipedia-theme .nextra-toc p {
+  color: var(--mp-ink);
+}
+
+.multipedia-theme .nextra-toc a {
+  color: var(--mp-ink-mute) !important;
+}
+
+.multipedia-theme .nextra-toc a:hover,
+.multipedia-theme .nextra-toc a[class*="text-primary"] {
+  color: var(--mp-accent-text) !important;
+}
+
+.multipedia-theme footer {
+  margin: 0 auto !important;
+  max-width: var(--nextra-content-width) !important;
+  padding: 0 22px 34px !important;
+}
+
+.mp-footer {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-card-radius);
+  background: var(--mp-panel);
+  box-shadow: var(--mp-shadow);
+  color: var(--mp-ink-dim);
+}
+
+.mp-footer-bar {
+  height: 3px;
+  background: linear-gradient(90deg, #67d6e6 0%, var(--mp-accent) 44%, #23262c 100%);
+  opacity: 0.9;
+}
+
+.mp-footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 18px 14px;
+}
+
+.mp-footer-brand {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.mp-footer-logo {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--mp-border-2);
+  border-radius: 8px;
+  background: var(--mp-panel-2);
+}
+
+.mp-footer-logo img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.mp-footer-brand strong {
+  display: block;
+  color: var(--mp-ink);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.mp-footer-brand small {
+  display: block;
+  margin-top: 3px;
+  color: var(--mp-ink-mute);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.mp-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.mp-footer-links a {
+  display: inline-flex;
+  height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid var(--mp-border);
+  border-radius: var(--mp-small-radius);
+  background: var(--mp-panel-2);
+  color: var(--mp-ink-dim);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mp-footer-links a:hover {
+  border-color: var(--mp-accent-line);
+  color: #fff;
+  background: var(--mp-panel-3);
+}
+
+.mp-footer-links svg {
+  flex: 0 0 auto;
+}
+
+.mp-footer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 18px 14px;
+  border-top: 1px solid var(--mp-border);
+  color: var(--mp-ink-mute);
+  font-size: 12px;
+}
+
 img.emoji {
   width: 24px;
   height: 24px;
@@ -33,16 +872,154 @@ img.emoji {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  vertical-align: middle;
   max-width: 100%;
+  vertical-align: middle;
 }
 
-/* Иконки предметов в пункте сайдбара (как у «Самоцвета», зелёный ключ и т.п.) */
 .custom-sidebar-icon {
-  image-rendering: pixelated !important;
   display: inline-block !important;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  margin-right: 6px !important;
   vertical-align: -6px !important;
-  margin-right: 4px !important;
+  image-rendering: pixelated !important;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --nextra-navbar-height: 78px;
+  }
+
+  .multipedia-theme .nextra-navbar {
+    padding: 10px 14px;
+  }
+
+  .multipedia-theme .nextra-navbar > nav {
+    height: 58px !important;
+    min-height: 58px;
+  }
+
+  .mp-logo-tagline {
+    display: none;
+  }
+
+  .multipedia-theme article {
+    margin: 12px 14px 24px;
+    padding: 24px 22px 30px !important;
+  }
+
+  .mp-home-hero,
+  .mp-home-news {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mp-home-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .multipedia-theme .x\:mx-auto.x\:flex {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .multipedia-theme .nextra-navbar > nav {
+    padding: 0 12px !important;
+  }
+
+  .multipedia-theme .nextra-mobile-nav {
+    background: var(--mp-bg) !important;
+  }
+
+  .multipedia-theme .nextra-mobile-nav > div:first-child {
+    margin: 14px;
+    border: 1px solid var(--mp-border);
+    border-radius: var(--mp-card-radius);
+    background: var(--mp-panel);
+  }
+
+  .multipedia-theme .nextra-search {
+    min-width: 0;
+  }
+
+  .multipedia-theme article {
+    width: calc(100vw - 20px) !important;
+    max-width: calc(100vw - 20px) !important;
+    min-width: 0 !important;
+    margin: 10px 10px 20px;
+    padding: 22px 18px 28px !important;
+    overflow: hidden;
+    border-radius: var(--mp-panel-radius);
+  }
+
+  .multipedia-theme article main {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .multipedia-theme article p,
+  .multipedia-theme article li,
+  .multipedia-theme article h1,
+  .multipedia-theme article h2,
+  .multipedia-theme article h3 {
+    overflow-wrap: anywhere;
+  }
+
+  .multipedia-theme .nextra-cards {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .multipedia-theme .nextra-card {
+    min-width: 0 !important;
+  }
+
+  .mp-home-hero {
+    padding: 14px;
+  }
+
+  .mp-home-hero img {
+    min-height: 150px;
+  }
+
+  .mp-home-steps,
+  .mp-home-feature-grid,
+  .mp-home-news {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .mp-home-commands {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .multipedia-theme article h1 {
+    font-size: 28px;
+  }
+
+  .multipedia-theme article h2 {
+    font-size: 20px !important;
+  }
+
+  .multipedia-theme footer {
+    padding: 0 10px 24px !important;
+  }
+
+  .mp-footer-main {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .mp-footer-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .mp-footer-meta {
+    flex-direction: column;
+  }
 }
 
 .back-to-site-btn {

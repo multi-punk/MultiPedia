@@ -3,39 +3,107 @@ title: Главная
 asIndexPage: true
 ---
 
-import { Callout } from 'nextra/components'
-import Link from 'next/link'
 import { Cards } from 'nextra/components'
 
-# 👋 Добро пожаловать в **MultiPedia**
+# Добро пожаловать в MultiPedia
 
-## 🚀 С чего начать?
+<div className="mp-home-hero">
+  <div>
+    <p className="mp-home-lead">
+      База знаний сервера: старт для новичков, правила, гайды по механикам,
+      предметы, подземелья и полезные заметки от игроков.
+    </p>
+    <div className="mp-home-actions">
+      <a className="mp-home-button primary" href="/begginer_course">Начать новичку</a>
+      <a className="mp-home-button" href="/guides">Открыть гайды</a>
+    </div>
+  </div>
+  <img src="/assets/news/MPSMP01B.png" alt="MultiPunk" />
+</div>
 
-Если ты впервые на сервере — начни с курса новичка:
+## Быстрый старт
+
+<div className="mp-home-steps">
+  <a href="/begginer_course/start">
+    <strong>Зайди на сервер</strong>
+    <small>Первый вход, планшет и базовые действия.</small>
+  </a>
+  <a href="/begginer_course/coords_and_lands">
+    <strong>Найди место</strong>
+    <small>Координаты, спавн и территории.</small>
+  </a>
+  <a href="/begginer_course/economy">
+    <strong>Разберись с валютой</strong>
+    <small>Экономика, магазины и полезные ресурсы.</small>
+  </a>
+</div>
+
+## Основные разделы
 
 <Cards>
   <Cards.Card
     title="📘 Курс для новичков"
-    description="Быстрый старт и основы игры. Узнай всё необходимое для комфортной игры на сервере."
+    description="Маршрут от первого входа до уверенного старта на сервере."
     href="/begginer_course"
-  />
-</Cards>
-
----
-
-## 📚 Основные разделы
-
-<Cards>
-  <Cards.Card
-    title="📜 Правила"
-    description="Правила сервера и важная информация для всех игроков"
-    href="/rules"
   />
   <Cards.Card
     title="🛠️ Гайды"
-    description="Полезные гайды по игровым механикам и системам сервера"
+    description="Территории, почта, чат, магазин, готовка, подземелья и боссы."
     href="/guides"
+  />
+  <Cards.Card
+    title="💎 Предметы и блоки"
+    description="Описание особых предметов, валюты и серверных блоков."
+    href="/items_and_blocks"
+  />
+  <Cards.Card
+    title="📜 Правила"
+    description="Коротко о том, как играть спокойно и не ловить неприятности."
+    href="/rules"
   />
 </Cards>
 
+## Что есть на сервере
 
+<div className="mp-home-feature-grid">
+  <div>
+    <span>🏠</span>
+    <strong>Территории</strong>
+    <p>Занимай землю, защищай постройки и расширяй базу по правилам сервера.</p>
+  </div>
+  <div>
+    <span>🍳</span>
+    <strong>Готовка</strong>
+    <p>Рецепты, ингредиенты, посуда и блюда с отдельной прогрессией.</p>
+  </div>
+  <div>
+    <span>🏰</span>
+    <strong>Подземелья</strong>
+    <p>Боссы, ключи, награды и продвинутая логистика подземелий.</p>
+  </div>
+  <div>
+    <span>💬</span>
+    <strong>Сообщество</strong>
+    <p>Чат, почта, карточки, билеты и удобная связь с другими игроками.</p>
+  </div>
+</div>
+
+## Свежие материалы
+
+<div className="mp-home-news">
+  <a href="/blog/interseason-ended">
+    <img src="/assets/news/MPSMP01B.png" alt="" />
+    <strong>Межсезонье завершено</strong>
+    <small>Новости сервера и важные изменения сезона.</small>
+  </a>
+  <a href="/blog/halloween-update-1-2-5">
+    <img src="/assets/news/hellowen.png" alt="" />
+    <strong>Halloween Update 1.2.5</strong>
+    <small>Тематический апдейт, события и находки.</small>
+  </a>
+  <a href="/blog/minecraft-1-26-10-invasion-of-the-mites">
+    <img src="/assets/news/tiny_take_over.png" alt="" />
+    <strong>Invasion of the Mites</strong>
+    <small>Материал по обновлению Minecraft 1.26.10.</small>
+  </a>
+</div>
