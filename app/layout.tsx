@@ -95,12 +95,15 @@ export default async function RootLayout({ children }) {
             <span className="mp-logo-name"><span>Multi</span>-педия</span>
             <span className="mp-logo-tagline">Чуть больше чем ванила</span>
           </span>
+
         </div>
       }
       chatLink="https://discord.gg/maGFJbf32V"
     >
+
       <a className="mp-social-link" href="https://t.me/multipunk" aria-label="Telegram">
         <TelegramIcon size={16} />
+
       </a>
     </Navbar>
   )
