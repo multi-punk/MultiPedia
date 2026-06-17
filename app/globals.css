@@ -473,12 +473,8 @@ body.multipedia-theme::before {
 
 .mp-home-hero img {
   width: 100%;
-  min-height: 220px;
-  max-height: 280px;
-  object-fit: cover;
-  border: 1px solid var(--mp-border);
+  height: auto;
   border-radius: var(--mp-small-radius);
-  background: var(--mp-bg);
 }
 
 .mp-home-chip {
