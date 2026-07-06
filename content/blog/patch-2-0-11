@@ -1,0 +1,45 @@
+---
+title:  ⚙️ Патч 2.0.11
+date: 2026-07-06
+description: Патч 2.0.11 — список изменений.
+tags: [Новости, Патч, MP SMP]
+---
+
+import { Callout } from 'nextra/components'
+
+# ⚙️ Патч 2.0.11
+
+![Патч 2.0.11](/assets/news/patch.png)
+
+
+## ⚙️ Исправлены баги:
+
+Исправленение достижений:
+- Исправлено достижение "Сберегательный счёт"
+- Исправлено достижения "Нос не дорос"
+- Исправлено ежедневное испытание "Посетить капельнековую пещеру"
+- Исправленно описание у достижения "Куда молния бьёт дважды"
+
+Прочие исправления:
+- Исправлен баг когда описание лота не отоброжалось при взгялде на блок магазина. Для корректной работы владельцам магзина нужно пересоздать лот.
+- Исправлен проблема связанная с невозможностью установить блок свечек и блок морского огурца
+- Исправлен критический баг связанный с достижениями выполняющемеся при помощи снарядов
+- Предмет рулетки окончательно вырезан из игры
+- Все степени окисления медных блоков теперь корректно отоброжаются в магазине и стойках для предметов
+
+
+Ядро сервера было обновленно, производительность немного должна улучшится
+
+
+
+---
+🤖 Нашли баг? Сообщите нам:
+
+<div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '8px' }}>
+  <a href="https://discord.com/channels/1141466506786517043/1274408858319851632" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '8px', background: '#5865F2', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>
+    <span style={{ color: '#ffffff' }}>Discord тикет</span>
+  </a>
+  <a href="https://t.me/m/IhxVcqKaNDM8" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', borderRadius: '8px', background: '#229ED9', textDecoration: 'none', fontSize: '14px', fontWeight: 600 }}>
+    <span style={{ color: '#ffffff' }}>Telegram тикет</span>
+  </a>
+</div>
