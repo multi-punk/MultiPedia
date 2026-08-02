@@ -1,23 +1,42 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-      about: {
-        title: 'Правила',
-        type: 'page',
-        href: '/rules'
-      },
-      contact: {
-        title: 'Гайды',
-        type: 'page',
-        href: '/guides'
-      },
-  rules: "Правила",
-  
+  index: {
+    title: "Главная",
+    type: "page"
+  },
+  blog: {
+    title: "Новости",
+    type: "page",
+    theme: {
+      collapsed: false,
+    },
+  },
+  "---": {
+    type: "separator",
+    title: "MP SMP"
+  },
+  rules: {
+    title: "Правила",
+    type: "page"
+  },
+  faq: {
+    title: "FAQ",
+    type: "page"
+  },
+  begginer_course: {
+    title: 'Курс для новичков'
+  },
   guides: {
     title: 'Гайды'
   },
-  cooking: 'Да будет пир',
-  dungens_and_creepers: 'Подземелье и Криперы',
-  "###": {
+  items_and_blocks: {
+    title: 'Предметы и Блоки'
+  },
+  "---2": {
     type: "separator",
+    title: "Multi PUNK Мини игры"
+  },
+  minigames_rules: {
+    title: "Правила"
   },
 };

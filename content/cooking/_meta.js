@@ -1,4 +1,0 @@
-export default {
-  pans_pots: '🍳 Кухонная утварь',
-  preparations: '🔪 Подготовка ингредиентов',
-}

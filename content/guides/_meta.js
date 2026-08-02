@@ -1,10 +1,15 @@
 export default {
   start: '📋 О планшете и достижениях',
   barrier: '🌍 Граница мира',
-  territory: '🏡 Как занять территорию?',
+  territory: 'Как занять территорию?',
   chat: '💬 Чат на сервере',
   shopblock: '🏪 Блок магазина',
   mail: '✉️ Почтовая система',
-  cardsandticket: '🪪 Билеты и карточки'
+  cardsandticket: '🪪 Билеты и карточки',
+  government: {
+    title: '🏛️ Правительство'
+  },
+  cooking: '🍖 Да будет пир',
+  dungens_and_creepers: '🏰 Подземелья и криперы'
 }
 
