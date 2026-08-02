@@ -1,0 +1,94 @@
+---
+title: Главная
+asIndexPage: true
+---
+
+import { Cards } from 'nextra/components'
+import { LatestNews } from '../app/components/latest-news'
+
+# Добро пожаловать в MultiPedia
+
+<div className="mp-home-hero">
+  <div>
+    <p className="mp-home-lead">
+      База знаний сервера: старт для новичков, правила, гайды по механикам,
+      предметы, подземелья и полезные заметки от игроков.
+    </p>
+    <div className="mp-home-actions">
+      <a className="mp-home-button primary" href="/begginer_course">Начать новичку</a>
+      <a className="mp-home-button" href="/guides">Открыть гайды</a>
+    </div>
+  </div>
+  <img src="/assets/mainPage.png" alt="MultiPunk" />
+</div>
+
+## Быстрый старт
+
+<div className="mp-home-steps">
+  <a href="/begginer_course/start">
+    <strong>Зайди на сервер</strong>
+    <small>Первый вход, планшет и базовые действия.</small>
+  </a>
+  <a href="/begginer_course/coords_and_lands">
+    <strong>Найди место</strong>
+    <small>Координаты, спавн и территории.</small>
+  </a>
+  <a href="/begginer_course/economy">
+    <strong>Разберись с валютой</strong>
+    <small>Экономика, магазины и полезные ресурсы.</small>
+  </a>
+</div>
+
+## Основные разделы
+
+<Cards>
+  <Cards.Card
+    title="📘 Курс для новичков"
+    description="Маршрут от первого входа до уверенного старта на сервере."
+    href="/begginer_course"
+  />
+  <Cards.Card
+    title="🛠️ Гайды"
+    description="Территории, почта, чат, магазин, готовка, подземелья и боссы."
+    href="/guides"
+  />
+  <Cards.Card
+    title="💎 Предметы и блоки"
+    description="Описание особых предметов, валюты и серверных блоков."
+    href="/items_and_blocks"
+  />
+  <Cards.Card
+    title="📜 Правила"
+    description="Коротко о том, как играть спокойно и не ловить неприятности."
+    href="/rules"
+  />
+</Cards>
+
+## Что есть на сервере
+
+<div className="mp-home-feature-grid">
+  <div>
+    <span>🏠</span>
+    <strong>Территории</strong>
+    <p>Занимай землю, защищай постройки и расширяй базу по правилам сервера.</p>
+  </div>
+  <div>
+    <span>🍳</span>
+    <strong>Готовка</strong>
+    <p>Рецепты, ингредиенты, посуда и блюда с отдельной прогрессией.</p>
+  </div>
+  <div>
+    <span>🏰</span>
+    <strong>Подземелья</strong>
+    <p>Боссы, ключи, награды и продвинутая логистика подземелий.</p>
+  </div>
+  <div>
+    <span>💬</span>
+    <strong>Сообщество</strong>
+    <p>Чат, почта, карточки, билеты и удобная связь с другими игроками.</p>
+  </div>
+</div>
+
+## Свежие материалы
+
+<LatestNews count={3} />
