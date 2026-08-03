@@ -9,13 +9,42 @@ import { Callout } from 'nextra/components'
 
 # ⚙️ Обновление 2.0.2
 
-![Обновление 2.0.2](/assets/news/patch.png)
+![Обновление 2.0.2](/assets/news/2_0_2_update.png)
 
 Наконец-то открыто измерение Незера — главное событие этого обновления. Помимо этого вас ждут улучшения почты, ребаланс Flow с новой системой наград, обновлённый обмен карточек, новая косметика территорий и другие изменения. Подробнее обо всём — ниже.
 
 ## 📝 Список изменений и нововведений:
 
-### 🔥 незерское нововведения
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '10px', margin: '4px 0 24px' }}>
+  <a href="#nether-update" style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(128,128,128,0.08)', border: '1px solid rgba(128,128,128,0.2)', color: 'inherit', textDecoration: 'none' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}><CustomEmoji name="Netherite_Upgrade_Smithing_Template" size={32} /> Незер</span>
+    <span style={{ fontSize: '12.5px', opacity: 0.7 }}>Открытие измерения, новая структура и адские задания</span>
+  </a>
+  <a href="#mail-update" style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(128,128,128,0.08)', border: '1px solid rgba(128,128,128,0.2)', color: 'inherit', textDecoration: 'none' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}><CustomEmoji name="mail_item" size={32} /> Почта</span>
+    <span style={{ fontSize: '12.5px', opacity: 0.7 }}>Умный поиск, история писем и новое меню ящика</span>
+  </a>
+  <a href="#flow-rebalance" style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(128,128,128,0.08)', border: '1px solid rgba(128,128,128,0.2)', color: 'inherit', textDecoration: 'none' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}><CustomEmoji name="flow" size={32} /> Flow</span>
+    <span style={{ fontSize: '12.5px', opacity: 0.7 }}>Новые тотемные мобы и награда за активную серию игр</span>
+  </a>
+  <a href="#card-exchange" style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(128,128,128,0.08)', border: '1px solid rgba(128,128,128,0.2)', color: 'inherit', textDecoration: 'none' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}><CustomEmoji name="playing_card_item_rare_villager" size={32} /> Карточки</span>
+    <span style={{ fontSize: '12.5px', opacity: 0.7 }}>Гарантированный апгрейд и новые способы обмена</span>
+  </a>
+  <a href="#misc-changes" style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(128,128,128,0.08)', border: '1px solid rgba(128,128,128,0.2)', color: 'inherit', textDecoration: 'none' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}><CustomEmoji name="Command_Block" size={32} /> Прочее</span>
+    <span style={{ fontSize: '12.5px', opacity: 0.7 }}>Медь, соль и новые товары в лавке MP SMP</span>
+  </a>
+  <a href="#new-cosmetics" style={{ display: 'flex', flexDirection: 'column', gap: '4px', padding: '12px 14px', borderRadius: '12px', background: 'rgba(128,128,128,0.08)', border: '1px solid rgba(128,128,128,0.2)', color: 'inherit', textDecoration: 'none' }}>
+    <span style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', fontWeight: 700 }}><CustomEmoji name="mp_yellow_axolotl_badge" size={32} /> Косметика</span>
+    <span style={{ fontSize: '12.5px', opacity: 0.7 }}>Новые скины территорий, стиль Терминала и наборы</span>
+  </a>
+</div>
+
+<span id="nether-update" />
+
+### <CustomEmoji name="Netherite_Upgrade_Smithing_Template" size={32} /> Незерские нововведения
 
 - **Открыт Незер** — измерение незера доступно для исследования, граница мира в нём составляет 500×500 блоков (по 250 в каждую сторону).
 - **Новая структура** — из-за небольшого размера доступного незера мы добавили уникальную структуру «Незерская оранжерея», где можно встретить всполохов и визер-скелетов, а также совершенно новый блок — хранилище Незера. За посещение этой структуры выполняется достижение «Чертоги страха».
@@ -25,6 +54,8 @@ import { Callout } from 'nextra/components'
 - **Новые незерские задания** — добавлено 17 лёгких, 8 сложных и 8 коллективных заданий, связанных с незером.
 
 ---
+
+<span id="mail-update" />
 
 ### <CustomEmoji name="mail_item" size={32} /> Обновление почты
 
@@ -40,7 +71,9 @@ import { Callout } from 'nextra/components'
 
 ---
 
-### ⚡ Ребаланс Flow
+<span id="flow-rebalance" />
+
+### <CustomEmoji name="flow" size={32} /> Ребаланс Flow
 
 
 Хоть мы и называем это ребалансом Flow, то, как он начисляется, осталось прежним.
@@ -64,10 +97,15 @@ import { Callout } from 'nextra/components'
 <Callout type="warning">
 При прерывании серии игр вы потеряете свой Значок активности.
 </Callout>
+<Callout type="warning">
+Значок не сохроняется между сезонами сервера
+</Callout>
 
 ---
 
-### <CustomEmoji name="playing_card_item_rare_villager" size={32} /> Изменения в обмене карт
+<span id="card-exchange" />
+
+### <CustomEmoji name="playing_card_item_rare_villager" size={32} /> Новый обмен карт
 
 - **Подсказка по обмену** — в меню обмена карточек добавлена подсказка, которая расскажет, как работает система. Она появится при первом открытии обмена, а также доступна в любой момент по нажатию на знак вопроса.
 
@@ -84,14 +122,31 @@ import { Callout } from 'nextra/components'
 
 <Callout type="info">
 Значок коллекционера — улучшаемый: для получения каждого следующего уровня необходимо сдать на 8 карт больше, чем в прошлый раз.
+
+Значок сохраняется между сезонами сервера.
+</Callout>
+<Callout>
+Это не единственная награда, которую можно получить за коллекционирование карточек — соберите полную коллекцию, и вас будет ждать особая награда.
 </Callout>
 - **Снижение цен** — Железный и Алмазный наборы карточек теперь дешевле: 49 и 199 Шардов соответственно.
 
+
 ---
 
+<span id="misc-changes" />
+
+### <CustomEmoji name="Command_Block" size={32} /> Прочие нововведения
+
 - **Новые товары в лавке MP SMP** — добавлены шаблон улучшения и губки.
-- **Состаривание меди солью** — теперь можно состарить степень окисления меди с помощью соли: 1 стадия за 1 соль. Нажмите солью по блоку меди.
-- **Новый способ получить соль** — теперь соль также выпадает с морских стражей.
+- **Состаривание меди солью** <CustomEmoji name="salt_spice" size={32} /> — теперь можно состарить степень окисления меди с помощью соли: 1 стадия за 1 соль. Нажмите солью по блоку меди.
+- **Новый способ получить соль** <CustomEmoji name="salt_spice" size={32} /> — теперь соль также выпадает с морских стражей.
+
+---
+
+<span id="new-cosmetics" />
+
+### <CustomEmoji name="mp_yellow_axolotl_badge" size={32} /> Новые косметические предметы
+
 - **Новая косметика территорий** — добавлена новая косметика территорий, которую уже можно приобрести на [multi-punk.ru](https://multi-punk.ru): «Тропический остров — день», «Тропический остров — закат», «Тропический остров — ночь», «Суми-э», «Незер», «Пещера».
 
 ![Новая косметика территорий](/assets/news/new_sign_preview-export.png)
@@ -103,6 +158,10 @@ import { Callout } from 'nextra/components'
 <Callout type="info">
 Вы могли заметить интерфейс этого стиля Терминала на протяжении всего чейнджлога.
 </Callout>
+
+- **Новый набор косметики «Жёлтый аксолотль»** — в него входят шапка жёлтого аксолотля, аквариум с жёлтым аксолотлем и значок жёлтого аксолотля в чате. Приобрести можно уже сейчас на [нашем сайте](https://multi-punk.ru).
+
+![Набор косметики «Жёлтый аксолотль»](/assets/news/berry_lover_pack_preview.png)
 
 ---
 
