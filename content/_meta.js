@@ -2,7 +2,7 @@
 export default {
   index: {
     title: "Главная",
-    type: "page"
+    display: "hidden"
   },
   blog: {
     title: "Новости",
